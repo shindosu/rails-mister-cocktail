@@ -1,21 +1,23 @@
 <div class="banner-section" style="background-image: url(<%= image_url("banner.jpg") %>)">
-  <h1 class="text-center">Summertime Madness</h1>
+  <h1 class="text-center">Summertime Magic</h1>
   <%= link_to "#cocktail-list" do%>
-    <i class="fas fa-angle-double-down" id="down"></i>
+    <div id="down"><i class="fas fa-angle-double-down"></i></div>
   <% end %>
 </div>
 
 <div class="container" id="cocktail-list">
+<h2>Grab your favorite!</h2>
   <%= link_to 'Add', new_cocktail_path %>
-  <div class="row">
-    <%= @ingredients %>
-      <% @cocktails.each do |cocktail| %>
-        <%= link_to cocktail_path(cocktail) do%>
-          <div class="cards mr-30" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cocktail.image_url %>)">  
-            <%= cocktail.name  %>
+  <div class="row mt-5">
+    <% @cocktails.each do |cocktail| %>
+      <%= link_to cocktail_path(cocktail) do%>
+        <% if cocktail.photo %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cocktail.image_url %>)"> 
+            <%= cocktail.name %>
           </div>
         <% end %>
       <% end %>
+    <% end %>
   </div>
 
   <div class="footer">

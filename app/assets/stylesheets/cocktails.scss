@@ -19,7 +19,7 @@ body{
   object-fit: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-position-y: center;
+  background-position-y: 120px;
   h1{
     position: relative;
     top: 100px;
@@ -27,20 +27,34 @@ body{
   }
   #down{
     font-size: 50px;
-    background-color: lightblue;
     width: 70px;
     height: 70px;
+    margin: 0 auto;
     text-align: center;
     border-radius: 50%;
+    border: solid 1px rgb(95, 95, 95);
+    position: relative;
+    top: 600px;
+    color: rgb(95, 95, 95);
+    transition-duration: 1s;
+    &:hover{
+      color: rgb(145, 145, 145);
+      border: solid 1px rgb(145, 145, 145);
+    }
   }
-
 }
 
-.rows{
-  height: 100vh;
+.container{
+  h2{  
+    position: relative;
+    top: 60px;
+    font-family: 'Homemade Apple', cursive;
+  }
 }
 
-.cards{
+
+
+.card{
   height: 300px;
   object-fit: cover;
   background-size: 300px 300px;
