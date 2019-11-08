@@ -1,0 +1,53 @@
+// Place all the styles related to the cocktails controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import url('https://fonts.googleapis.com/css?family=Homemade+Apple&display=swap');
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+.banner-section{
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  h1{
+    position: relative;
+    top: 100px;
+    font-family: 'Homemade Apple', cursive;
+  }
+  #down{
+    font-size: 50px;
+    background-color: lightblue;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    border-radius: 50%;
+  }
+
+}
+
+.rows{
+  height: 100vh;
+}
+
+.cards{
+  height: 300px;
+  object-fit: cover;
+  background-size: 300px 300px;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.footer{
+  font-family: 'Homemade Apple', cursive;
+}
