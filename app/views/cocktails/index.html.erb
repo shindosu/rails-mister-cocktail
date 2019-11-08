@@ -1,5 +1,3 @@
-<div class="container">
-
 <div class="banner-section" style="background-image: url(<%= image_url("banner.jpg") %>)">
   <h1 class="text-center">Summertime Magic</h1>
   <%= link_to "#cocktail-list" do%>
@@ -7,18 +5,20 @@
   <% end %>
 </div>
 
+<div class="container">
+
 <div id="cocktail-list">
-<h2>Grab your favorite!</h2>
-  <%= link_to 'Add', new_cocktail_path %>
+<h2 class="text-center">Grab your favorite!</h2>
+<h5 class="text-center"><%= link_to new_cocktail_path do %> <i class="fas fa-pen-square"></i> New Cocktail<% end %></h5>
   <div class="cards">
     <% @cocktails.each do |cocktail| %>
         <%= link_to cocktail_path(cocktail) do%>
         <% if cocktail.photo.file %>
-          <%= cl_image_tag(cocktail.photo) %>
+        <div class="card" style="background-image: url(<%= cl_image_path(cocktail.photo) %>)"> 
         <% elsif cocktail.image_url == nil %>
-           <div class="card" style="background-image: url(https://www.interserver.net/tips/wp-content/uploads/2016/10/404error.jpeg)"> 
-           <% else %>
-           <div class="card" style="background-image: url(<%= cocktail.image_url %>)"> 
+          <div class="card" style="background-image: url(https://www.interserver.net/tips/wp-content/uploads/2016/10/404error.jpeg)"> 
+          <% else %>
+          <div class="card" style="background-image: url(<%= cocktail.image_url %>)"> 
         <% end %>
             <p class="cocktail-name"><%= cocktail.name %></p>
           </div>

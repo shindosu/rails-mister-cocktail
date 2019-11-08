@@ -11,7 +11,9 @@ html, body{
 }
 
 .container{
-  margin:0;
+  width: 1000px;
+  margin:0 auto;
+  padding: 0;
 }
 
 .banner-section{
@@ -46,14 +48,28 @@ html, body{
 }
 
 #cocktail-list{
-    h2{  
+    h2{
       position: relative;
-      top: 60px;
+      top: 30px;
       font-family: 'Homemade Apple', cursive;
-    }  
+      text-align: center;
+    }
+    h5{
+      position: relative;
+      top: 120px;
+      font-family: 'Homemade Apple', cursive;
+    }
+    a{
+      color: black;
+      transition-duration: 0.7s;
+      &:hover{
+        text-decoration: none;
+        color: rgb(119, 119, 119);
+      }
+    }
     .cards{
       position: relative;
-      top: 100px; 
+      top: 200px; 
       display: grid;
       flex-grow: 1;
       grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -72,6 +88,9 @@ html, body{
   }
 
   .cocktail-name{
+    position: absolute;
+    top: 290px;
+    text-align: center;
     color: black;
   }
 
@@ -83,4 +102,32 @@ html, body{
 
 .footer{
   font-family: 'Homemade Apple', cursive;
+}
+
+@media(max-width: 992px) {
+
+  .container{
+    width: 700px;
+  }
+
+  #cocktail-list{
+      .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+  }
+
+}
+
+@media(max-width: 768px) {
+
+  .container{
+    width: 500px;
+  }
+
+  #cocktail-list{
+      .cards {
+    grid-template-columns: 1fr;
+  }
+  }
+
 }
