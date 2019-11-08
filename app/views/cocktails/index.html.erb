@@ -9,6 +9,16 @@
 
 <div id="cocktail-list">
 <h2 class="text-center">Grab your favorite!</h2>
+  <div class="search-form-control form-group">
+    <%= form_tag cocktails_path, method: :get, class: "search-form" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control"
+      %>
+      <%= submit_tag "Search", class: "btn btn-warning", id:"search" %>
+  </div>
+
+<% end %>
 <h5 class="text-center"><%= link_to new_cocktail_path do %> <i class="fas fa-pen-square"></i> New Cocktail<% end %></h5>
   <div class="cards">
     <% @cocktails.each do |cocktail| %>
@@ -20,7 +30,7 @@
           <% else %>
           <div class="card" style="background-image: url(<%= cocktail.image_url %>)"> 
         <% end %>
-            <p class="cocktail-name"><%= cocktail.name %></p>
+            <p class="cocktail-name text-center"><%= cocktail.name %></p>
           </div>
       <% end %>
     <% end %>

@@ -2,7 +2,11 @@ class CocktailsController < ApplicationController
   before_action :set_cocktail, only: [:show, :edit, :update, :destroy]
   
   def index
-    @cocktails = Cocktail.all
+        if params[:query].present?
+          @cocktails = Cocktail.where("name ILIKE ?", "%#{params[:query]}")
+    else
+      @cocktails = Cocktail.all
+    end
   end
 
   def show
@@ -36,16 +40,6 @@ class CocktailsController < ApplicationController
     @cocktail.destroy
     redirect_to cocktails_path
   end
-
-  # def search
-  #   if params[:search].blank?
-  #   redirect_to cocktails_url
-  #   else
-  #   @parameter = params[:search]
-  #   @results = Book.where("title LIKE ?", "%#{@parameter}%")
-  #   end
-  # end
-
 
   private 
   def set_cocktail

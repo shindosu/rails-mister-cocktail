@@ -24,9 +24,9 @@ html, body{
   background-repeat: no-repeat;
   background-position-y: 120px;
   h1{
+    font-family: 'Homemade Apple', cursive;
     position: relative;
     top: 100px;
-    font-family: 'Homemade Apple', cursive;
   }
   #down{
     font-size: 50px;
@@ -48,17 +48,32 @@ html, body{
 }
 
 #cocktail-list{
+    h2, h5{
+      font-family: 'Homemade Apple', cursive;
+    }
+
     h2{
       position: relative;
       top: 30px;
-      font-family: 'Homemade Apple', cursive;
       text-align: center;
     }
+
     h5{
       position: relative;
       top: 120px;
-      font-family: 'Homemade Apple', cursive;
     }
+
+    .search-form{
+      position: relative;
+      top: 80px;
+    }
+
+    #search{
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
     a{
       color: black;
       transition-duration: 0.7s;
@@ -77,32 +92,28 @@ html, body{
       grid-gap: 16px;
   }
 
-  .card{
-    height: 350px;
-    object-fit: cover;
-    background-size: 100% 80%;
-    background-repeat: no-repeat;
-    background-position-y: top;
-    background-position-x: center;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    .card{
+      height: 350px;
+      object-fit: cover;
+      background-size: 100% 80%;
+      background-repeat: no-repeat;
+      background-position-y: top;
+      background-position-x: center;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .cocktail-name{
+      position: absolute;
+      top: 290px;
+
+      color: black;
+    }
+
+    a:hover{
+        text-decoration: none;
+    }
   }
 
-  .cocktail-name{
-    position: absolute;
-    top: 290px;
-    text-align: center;
-    color: black;
-  }
-
-  a:hover{
-      text-decoration: none;
-  }
-  }
-
-
-.footer{
-  font-family: 'Homemade Apple', cursive;
-}
 
 @media(max-width: 992px) {
 
@@ -122,12 +133,11 @@ html, body{
 
   .container{
     width: 500px;
-  }
 
-  #cocktail-list{
-      .cards {
-    grid-template-columns: 1fr;
-  }
+    .card{
+      height: 200px;
+    }
+  
   }
 
 }
