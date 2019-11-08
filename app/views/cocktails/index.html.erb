@@ -1,3 +1,5 @@
+<div class="container">
+
 <div class="banner-section" style="background-image: url(<%= image_url("banner.jpg") %>)">
   <h1 class="text-center">Summertime Magic</h1>
   <%= link_to "#cocktail-list" do%>
@@ -5,22 +7,29 @@
   <% end %>
 </div>
 
-<div class="container" id="cocktail-list">
+<div id="cocktail-list">
 <h2>Grab your favorite!</h2>
   <%= link_to 'Add', new_cocktail_path %>
-  <div class="row mt-5">
+  <div class="cards">
     <% @cocktails.each do |cocktail| %>
-      <%= link_to cocktail_path(cocktail) do%>
-        <% if cocktail.photo %>
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cocktail.image_url %>)"> 
-            <%= cocktail.name %>
-          </div>
+        <%= link_to cocktail_path(cocktail) do%>
+        <% if cocktail.photo.file %>
+          <%= cl_image_tag(cocktail.photo) %>
+        <% elsif cocktail.image_url == nil %>
+           <div class="card" style="background-image: url(https://www.interserver.net/tips/wp-content/uploads/2016/10/404error.jpeg)"> 
+           <% else %>
+           <div class="card" style="background-image: url(<%= cocktail.image_url %>)"> 
         <% end %>
+            <p class="cocktail-name"><%= cocktail.name %></p>
+          </div>
       <% end %>
     <% end %>
   </div>
+</div>
 
   <div class="footer">
     <h3>Want to See more? Follow us!</h3>
   </div>
+</div>
+
 </div>

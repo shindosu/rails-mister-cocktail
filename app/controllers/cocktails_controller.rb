@@ -37,6 +37,16 @@ class CocktailsController < ApplicationController
     redirect_to cocktails_path
   end
 
+  # def search
+  #   if params[:search].blank?
+  #   redirect_to cocktails_url
+  #   else
+  #   @parameter = params[:search]
+  #   @results = Book.where("title LIKE ?", "%#{@parameter}%")
+  #   end
+  # end
+
+
   private 
   def set_cocktail
     @cocktail = Cocktail.find(params[:id])
