@@ -1,18 +1,22 @@
-<h1><%= @cocktail.name %></h1>
-        <% if @cocktail.photo.file %>
-          <%= cl_image_tag(@cocktail.photo) %>
-        <% elsif @cocktail.image_url == nil %>
-          <div class="card" style="background-image: url(https://www.interserver.net/tips/wp-content/uploads/2016/10/404error.jpeg)"> 
-          <% else %>
-          <div class="card" style="background-image: url(<%= @cocktail.image_url %>)"> 
-        <% end %>
-            <p class="cocktail-name"><%= @cocktail.name %></p>
-          </div>
-
-<% @cocktail.doses.each do |dose| %>
-  <p><%= dose.description %></p>
-  <p><%= dose.ingredient.name %></p>
-<% end %>
+  <div class="d-flex justify-content-around">
+    <div class="cocktail-information">
+    <h1><%= @cocktail.name %></h1>
+    <p><%= @cocktail.description %></p>
+    <% @cocktail.doses.each do |dose| %>
+      <p><%= dose.description %></p>
+      <p><%= dose.ingredient.name %></p>
+    <% end %>
+    </div>
+    <div class="image-container">
+      <% if @cocktail.photo.file %>
+        <%= cl_image_tag(@cocktail.photo, class: "image", size: "400x500")%>
+      <% elsif @cocktail.image_url == nil %>
+        <%= image_tag( "https://www.interserver.net/tips/wp-content/uploads/2016/10/404error.jpeg", class: "image")%>  
+      <% else %>
+        <%= image_tag(@cocktail.image_url, class: "image", size: "400x500")%>
+      <% end %>
+    </div>
+  </div>
 
 <%= link_to 'Edit', edit_cocktail_path %>
 <%= link_to 'Add a dose', new_cocktail_dose_path(@cocktail) %>

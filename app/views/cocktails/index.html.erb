@@ -13,22 +13,23 @@
     <%= form_tag cocktails_path, method: :get, class: "search-form" do %>
       <%= text_field_tag :query,
         params[:query],
-        class: "form-control"
+        class: "form-control",
+        placeholder: "Enter a cocktail"
       %>
       <%= submit_tag "Search", class: "btn btn-warning", id:"search" %>
   </div>
 
 <% end %>
 <h5 class="text-center"><%= link_to new_cocktail_path do %> <i class="fas fa-pen-square"></i> New Cocktail<% end %></h5>
-  <div class="cards">
+  <div class="cards mb-3">
     <% @cocktails.each do |cocktail| %>
         <%= link_to cocktail_path(cocktail) do%>
         <% if cocktail.photo.file %>
-        <div class="card" style="background-image: url(<%= cl_image_path(cocktail.photo) %>)"> 
+        <div class="card" data-aos="fade-up" style="background-image: url(<%= cl_image_path(cocktail.photo) %>)"> 
         <% elsif cocktail.image_url == nil %>
-          <div class="card" style="background-image: url(https://www.interserver.net/tips/wp-content/uploads/2016/10/404error.jpeg)"> 
+          <div class="card" data-aos="fade-up" style="background-image: url(https://www.interserver.net/tips/wp-content/uploads/2016/10/404error.jpeg)"> 
           <% else %>
-          <div class="card" style="background-image: url(<%= cocktail.image_url %>)"> 
+          <div class="card" data-aos="fade-up" style="background-image: url(<%= cocktail.image_url %>)"> 
         <% end %>
             <p class="cocktail-name text-center"><%= cocktail.name %></p>
           </div>
