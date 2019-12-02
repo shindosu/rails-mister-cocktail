@@ -19,3 +19,7 @@ console.log('Hello World from Webpacker')
 
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 initUpdateNavbarOnScroll();
+
+import AOS from 'aos';
+import 'aos/dist/aos.css'
+AOS.init();
