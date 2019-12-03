@@ -1,9 +1,10 @@
 class CocktailsController < ApplicationController
   before_action :set_cocktail, only: [:show, :edit, :update, :destroy]
+  before_action :set_rating, only: [:index, :show]
   
   def index
-        if params[:query].present?
-          @cocktails = Cocktail.where("name ILIKE ?", "%#{params[:query]}")
+    if params[:query].present?
+      @cocktails = Cocktail.where("name ILIKE ?", "%#{params[:query]}")
     else
       @cocktails = Cocktail.all
     end
@@ -48,5 +49,16 @@ class CocktailsController < ApplicationController
 
   def cocktail_params
     params.require(:cocktail).permit(:name, :photo)
+  end
+
+  def set_rating
+    @rating = {
+      "0": 0,
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5      
+    }
   end
 end

@@ -25,6 +25,7 @@ html, body{
   h1{
     position: relative;
     top: 100px;
+    font-family: 'Homemade Apple', cursive;
   }
   #down{
     font-size: 50px;
@@ -50,11 +51,13 @@ html, body{
       position: relative;
       top: 30px;
       text-align: center;
+      font-family: 'Homemade Apple', cursive;
     }
 
     h5{
       position: relative;
       top: 120px;
+      font-family: 'Homemade Apple', cursive;
     }
 
     .search-form{
@@ -85,16 +88,6 @@ html, body{
       // grid-template-rows: 20%;
       grid-gap: 16px;
   }
-
-    .card{
-      height: 350px;
-      object-fit: cover;
-      background-size: 100% 80%;
-      background-repeat: no-repeat;
-      background-position-y: top;
-      background-position-x: center;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    }
 
     .cocktail-name{
       position: absolute;
