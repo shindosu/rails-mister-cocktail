@@ -1,3 +1,7 @@
   <% cocktail.alcohol_level.times do %>
     <i class="fas fa-wine-glass px-1 wine-glass"></i>
   <% end %>
+  <% (5-cocktail.alcohol_level).times do %>
+    <i class="fas fa-wine-glass px-1 wine-glass-unselected"></i>
+  <% end %>
+

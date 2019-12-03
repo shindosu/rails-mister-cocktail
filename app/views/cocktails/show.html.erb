@@ -1,22 +1,25 @@
-  <div class="d-flex justify-content-around">
-    <div class="cocktail-information">
-    <h1><%= @cocktail.name %></h1>
-    <p><%= @cocktail.description %></p>
-    <% @cocktail.doses.each do |dose| %>
-      <p><%= dose.description %></p>
-      <p><%= dose.ingredient.name %></p>
+<div class="d-flex justify-content-center">
+  <div class="image-container">
+    <% if @cocktail.photo.file %>
+      <%= cl_image_tag(@cocktail.photo, class: "image", size: "400x500")%>
+    <% elsif @cocktail.image_url == nil %>
+      <%= image_tag( "https://www.interserver.net/tips/wp-content/uploads/2016/10/404error.jpeg", class: "image")%>  
+    <% else %>
+      <%= image_tag(@cocktail.image_url, class: "image", size: "400x500")%>
     <% end %>
-    </div>
-    <div class="image-container">
-      <% if @cocktail.photo.file %>
-        <%= cl_image_tag(@cocktail.photo, class: "image", size: "400x500")%>
-      <% elsif @cocktail.image_url == nil %>
-        <%= image_tag( "https://www.interserver.net/tips/wp-content/uploads/2016/10/404error.jpeg", class: "image")%>  
-      <% else %>
-        <%= image_tag(@cocktail.image_url, class: "image", size: "400x500")%>
-      <% end %>
-    </div>
   </div>
+  <div class="cocktail-information ml-5">
+    <h1 id="cocktail-header"><%= @cocktail.name %></h1>
+    <p> Alcohol Level: <%= render 'shared/alcohol_level', cocktail: @cocktail %> </p>
+    <p class="cocktail-description"><%= @cocktail.description %></p>
+  </div>
+  <div class="cocktail-doses">
+    <% @cocktail.doses.each do |dose| %>
+    <p><%= dose.description %></p>
+    <p><%= dose.ingredient.name %></p>
+    <% end %>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_cocktail_path %>
 <%= link_to 'Add a dose', new_cocktail_dose_path(@cocktail) %>
