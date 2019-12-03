@@ -1,11 +1,11 @@
 // Import Google fonts
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Homemade+Apple&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Patrick+Hand&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
 // Define fonts for body and headers
-$body-font: 'Patrick Hand', cursive;
 $headers-font:　'Homemade Apple', cursive;
+$body-font:  'Bebas Neue', cursive;
+//'Open Sans', sans-serif;
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {

@@ -27,15 +27,11 @@ end
 JSON.parse(cocktails_list)["drinks"].each do |cocktail|
   Cocktail.create!(
     name: cocktail["strDrink"],
-    image_url: cocktail["strDrinkThumb"]
+    image_url: cocktail["strDrinkThumb"],
+    alcohol_level: rand(1..5)
   )
 end
 
-# Cocktail.create( name: "Bloody Mary" )
-# Cocktail.create( name: "Sex on the Beach" )
-# Cocktail.create( name: "Organic Juice" )
 
 
-
-
-puts 'Finished! Successfully added'
+puts "Finished! Successfully added #{Cocktail.count}"

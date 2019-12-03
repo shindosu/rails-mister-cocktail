@@ -16,7 +16,7 @@
         class: "form-control",
         placeholder: "Enter a cocktail"
       %>
-      <%= submit_tag "Search", class: "btn btn-warning", id:"search" %>
+      <%= submit_tag "Search", class: "btn btn-primary", id:"search" %>
   </div>
 
 <% end %>
@@ -31,7 +31,8 @@
           <% else %>
           <div class="card" data-aos="fade-up" style="background-image: url(<%= cocktail.image_url %>)"> 
         <% end %>
-            <p class="cocktail-name text-center"><%= cocktail.name %></p>
+            <p class="cocktail-name pl-3"><%= cocktail.name %></p>
+            <p class="alcohol-icon pl-3">Alcohol Level: <%= render "shared/alcohol_level", cocktail: cocktail %></p>
           </div>
       <% end %>
     <% end %>
