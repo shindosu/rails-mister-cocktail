@@ -32,6 +32,13 @@ JSON.parse(cocktails_list)["drinks"].each do |cocktail|
   )
 end
 
+Cocktail.create!(
+  name: "Blue Hawaii",
+  image_url: "https://cdn.liquor.com/wp-content/uploads/2019/07/12101312/Blue-Hawaii-720x720-recipe.jpg",
+  description: "The Blue Hawaii is a tropical cocktail made of rum, pineapple juice, Blue Curaçao, sweet and sour mix, and sometimes vodka. It should not be confused with the similarly named Blue Hawaiian cocktail that contains creme of coconut instead of sweet and sour mix.",
+  alcohol_level: rand(1..5)
+)
+
 
 
 puts "Finished! Successfully added #{Cocktail.count}"
