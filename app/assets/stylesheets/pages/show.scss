@@ -5,3 +5,18 @@
 #cocktail-header{
   font-family: 'Homemade Apple', cursive;;
 }
+
+#show-container{
+  position: relative;
+  top: 150px;
+
+  a{
+    color: black;
+    transition-duration: 0.2s;
+
+  &:hover{
+    text-decoration: none;
+    color: #A5FFFE;
+  }
+}
+}

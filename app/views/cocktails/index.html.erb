@@ -1,5 +1,5 @@
 <div class="banner-section" style="background-image: url(<%= image_url("banner.jpg") %>)">
-  <h1 class="text-center">Summertime Magic</h1>
+  <h1 class="text-center">Your favorite cocktails, all in one place</h1>
   <%= link_to "#cocktail-list" do%>
     <div id="down"><i class="fas fa-angle-double-down"></i></div>
   <% end %>
@@ -8,7 +8,6 @@
 <div class="container">
 
 <div id="cocktail-list">
-<h2 class="text-center">Grab your favorite!</h2>
   <div class="search-form-control form-group">
     <%= form_tag cocktails_path, method: :get, class: "search-form" do %>
       <%= text_field_tag :query,
@@ -20,7 +19,6 @@
   </div>
 
 <% end %>
-<h5 class="text-center"><%= link_to new_cocktail_path do %> <i class="fas fa-plus"></i> New Cocktail<% end %></h5>
   <div class="cards mb-3">
     <% @cocktails.each do |cocktail| %>
         <%= link_to cocktail_path(cocktail) do%>
@@ -33,6 +31,7 @@
         <% end %>
             <p class="cocktail-name pl-3"><%= cocktail.name %></p>
             <p class="alcohol-icon pl-3 mb-2">Alcohol Level: <%= render "shared/alcohol_level", cocktail: cocktail %></p>
+            <p> <%= cocktail.main_spiritus %></p>
           </div>
       <% end %>
     <% end %>

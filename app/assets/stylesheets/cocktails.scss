@@ -21,11 +21,12 @@ html, body{
   object-fit: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-position-y: 120px;
+  background-position-y: 0px;
   h1{
     position: relative;
-    top: 100px;
+    top: 550px;
     font-family: 'Homemade Apple', cursive;
+    font-size: 2em;
   }
   #down{
     font-size: 50px;
@@ -99,6 +100,12 @@ html, body{
     a:hover{
         text-decoration: none;
     }
+  }
+
+  //EDIT
+  #edit-container{
+    position: relative;
+    top: 150px;
   }
 
 @media(max-width: 992px) {
