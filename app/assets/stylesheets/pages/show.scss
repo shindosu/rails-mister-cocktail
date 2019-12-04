@@ -2,8 +2,11 @@
   width: 500px;
 }
 
-#cocktail-header{
-  font-family: 'Homemade Apple', cursive;;
+.cocktail-information{
+  h1{
+    font-family: 'Homemade Apple', cursive;
+    font-size: 2em;
+  }
 }
 
 #show-container{
