@@ -17,7 +17,7 @@
     </div>
   </div>
   <div class="cocktail-information ml-5">
-    <h1 id="cocktail-header"><%= @cocktail.name %></h1>
+    <h1 class = "mb-4"><%= @cocktail.name %></h1>
     <p> Alcohol Level: <%= render 'shared/alcohol_level', cocktail: @cocktail %> </p>
     <p class="cocktail-flavor">FLAVOR: <%= @cocktail.flavor %></p>
     <p class="cocktail-description"><%= @cocktail.description %></p>
