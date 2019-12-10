@@ -9,6 +9,7 @@ require 'json'
 require 'open-uri'
 
 puts 'Cleaning database...'
+Dose.destroy_all
 Ingredient.destroy_all #Destroy first before seed bc u don’t want dulicates
 Cocktail.destroy_all 
 
@@ -34,6 +35,7 @@ end
 
 Cocktail.create!(
   name: "Blue Hawaii",
+  flavor: "Fruity",
   image_url: "https://cdn.liquor.com/wp-content/uploads/2019/07/12101312/Blue-Hawaii-720x720-recipe.jpg",
   description: "The Blue Hawaii is a tropical cocktail made of rum, pineapple juice, Blue Curaçao, sweet and sour mix, and sometimes vodka. It should not be confused with the similarly named Blue Hawaiian cocktail that contains creme of coconut instead of sweet and sour mix.",
   alcohol_level: rand(1..5)
